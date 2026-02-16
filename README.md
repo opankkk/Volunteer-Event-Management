@@ -21,8 +21,13 @@ Untuk menjalankan project ini secara lokal, ikuti langkah berikut:
 
 1. **Clone Repository:** `git clone <link-repo-anda>`
 2. **Install Dependencies:** `composer install`
-3. **Environment Setup:** `cp .env.example .env` lalu `php artisan key:generate`
-4. **Database Setup:** `php artisan migrate:fresh`
+3. **Environment Setup:** - Windows (CMD): `copy .env.example .env`
+    - macOS/Linux/PowerShell: `cp .env.example .env`
+    - Lalu jalankan: `php artisan key:generate`
+4. **Database Setup (SQLite):**
+    - Buat file database kosong bernama `database.sqlite` di dalam folder `database`. (Pada macOS/Linux gunakan perintah: `touch database/database.sqlite`).
+    - Pastikan di file `.env` bagian `DB_CONNECTION` sudah bernilai `sqlite`.
+    - Jalankan migrasi tabel: `php artisan migrate:fresh`
 5. **Run Server:** `php artisan serve`
 
 ## API Endpoints
