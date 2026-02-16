@@ -6,13 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\StoreEventRequest;
+use App\Http\Resources\EventResource;
 
 class EventController extends Controller
 {
     public function index()
     {
         // GET /events - Melihat daftar event
-        return response()->json(Event::all());
+        $events = Event::paginate(10);
+        return EventResource::collection($events);
     }
 
     public function store(StoreEventRequest $request)
@@ -27,7 +29,7 @@ class EventController extends Controller
     {
         // GET /events/{id} - Detail event
         $event = Event::findOrFail($id);
-        return response()->json($event);
+        return new EventResource($event);
     }
 
     public function join(Request $request, $id)
