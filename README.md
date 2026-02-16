@@ -30,6 +30,20 @@ Untuk menjalankan project ini secara lokal, ikuti langkah berikut:
     - Jalankan migrasi tabel: `php artisan migrate:fresh`
 5. **Run Server:** `php artisan serve`
 
+### 🔑 Akun Uji Coba (Seeder)
+
+Gunakan akun berikut untuk pengujian API:
+
+**Akun 1 (Admin):**
+
+-   Email: `admin@rintisar.com`
+-   Password: `password123`
+
+**Akun 2 (Volunteer):**
+
+-   Email: `opank@developer.com`
+-   Password: `password123`
+
 ## API Endpoints
 
 Berikut adalah daftar endpoint utama yang tersedia:
